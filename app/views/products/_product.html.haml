@@ -1,0 +1,3 @@
+.product{:style => "display:none;", :id => "product_#{product.id}"}
+  %h2= product.description
+  %p= link_to "Buy Now", "https://store.discobiscuits.com/pre_order.php?id=#{product.number}"

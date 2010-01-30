@@ -24,7 +24,7 @@ class ProductPresenter
   def num_empty_tiles
     num_tiles - products.size
   end
-
+=begin
   def matrix
     @matrix ||= build_matrix
   end
@@ -33,11 +33,12 @@ class ProductPresenter
     mat = []
     rows.times do |time|
       mat[time] ||= []
-      columns.times {|t| mat[time] << products[time * t]}
+      columns.times.collect {|t| tiles[time * t]}
+
     end
     mat
   end
-
+=end
 
 
 

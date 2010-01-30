@@ -1,0 +1,54 @@
+body {
+  background-color: #000000; }
+
+#grid {
+  width: 900px;
+  clear: both;
+  cursor: pointer;
+  background-image: url(/images/main.jpg); }
+
+#grid_image {
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0.4;
+  position: absolute;
+  width: 100%;
+  z-index: -1; }
+
+.tile {
+  margin: 2px;
+  overflow: hidden;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  float: left; }
+
+#background_img {
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0.4;
+  position: absolute;
+  width: 100%;
+  z-index: -1; }
+
+.cd {
+  background-image: url(/images/products/signed_cd.jpg); }
+
+.tshirt {
+  background-image: url(/images/products/vip.jpg); }
+
+
+
+
+
+
+.bisco {
+  background-image: url(/images/products/golf_cart.jpg); }
+
+.year {
+  background-image: url(/images/products/all_access.jpg); }
+
+.gitwillig {
+  background-image: url(/images/products/all_access.jpg); }

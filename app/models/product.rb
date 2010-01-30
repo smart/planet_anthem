@@ -66,4 +66,8 @@ class Product < ActiveRecord::Base
     Money.new(cents)
   end
 
+  def html_class
+    description.split(" ").last.try(:underscore)
+  end
+
 end

@@ -3,11 +3,9 @@
   %head
     %link{ :rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon"}/
     %title= "Sabre Dance :: "+ controller.controller_name.capitalize
-    = stylesheet_link_tag 'compiled/screen'
+    = stylesheet_link_tag 'main'
     = javascript_include_tag :defaults
   %body
-    .header#header
-      = render 'layouts/header'
     .container
       .flash
         %p{:style => "color: green"}= flash[:notice]
