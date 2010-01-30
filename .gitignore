@@ -1,0 +1,13 @@
+vendor/bundler_gems
+.DS_Store
+rerun.txt
+webrat*.*
+coverage
+*.war
+bin/
+log/*
+tmp/*
+!tmp/.gitkeep
+vendor/gems/*
+.#*
+public/javascripts/all.js
