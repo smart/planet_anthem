@@ -1,0 +1,7 @@
+
+#grid
+- @product_presenter.matrix.each_with_index do |row, i|
+  .grid_row{:id => "grid_row_#{i}"}
+    - row.each_with_index do |tile, t|
+      .tile{:id => "tile_#{t}x#{i}", :class => "#{tile.nil? ? "empty" : tile.description.underscore}"}
+        hi
