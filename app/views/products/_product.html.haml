@@ -5,6 +5,6 @@
     =# link_to_function('H', "Element.toggle('product_#{product.id}')") if product
     = image_tag "products/#{product.html_class}.jpg", :style => "width:100%; height:100%;"
     .product_overlay{:style => "display:none;", :id => "product_#{product.id}"}
-      
+
       %h2= product.description
-      %p= link_to "Buy Now",
+      %p= link_to "Buy Now", "https://store.discobiscuits.com/pre_order.php?id=#{product.number}"
