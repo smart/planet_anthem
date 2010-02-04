@@ -11,3 +11,4 @@ tmp/*
 vendor/gems/*
 .#*
 public/javascripts/all.js
+db/*.sqlite3
