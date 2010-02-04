@@ -1,11 +1,11 @@
 class ProductPresenter
-  DEFAULT_COLUMNS = 35
-  DEFAULT_ROWS = 30
-  attr_reader :rows, :columns
+  DEFAULT_WIDTH = 900
+  DEFAULT_HEIGHT = 900
+  attr_reader :width, :height
 
   def initialize(opts = {})
-    @rows = opts.delete(:rows) || DEFAULT_ROWS
-    @columns = opts.delete(:columns) || DEFAULT_COLUMNS
+    @width = opts.delete(:width) || DEFAULT_WIDTH
+    @height = opts.delete(:height) || DEFAULT_HEIGHT
   end
 
 
@@ -18,30 +18,27 @@ class ProductPresenter
   end
 
   def num_tiles
-    rows * columns
+    smallest_square**2
   end
 
   def num_empty_tiles
     num_tiles - products.size
   end
-=begin
-  def matrix
-    @matrix ||= build_matrix
+
+  def tile_width
+    width / smallest_square
   end
 
-  def build_matrix
-    mat = []
-    rows.times do |time|
-      mat[time] ||= []
-      columns.times.collect {|t| tiles[time * t]}
-
-    end
-    mat
+  def tile_height
+    height / smallest_square
   end
-=end
 
 
+  private
 
+  def smallest_square
+    Math.sqrt(products.size).ceil
+  end
 end
 
 

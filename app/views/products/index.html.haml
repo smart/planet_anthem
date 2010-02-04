@@ -1,11 +1,8 @@
 %center
   %h1 PLANET ANTHEM
   %img#background_img{:src => "images/background.png"}
-  #grid
+  #grid{:style => "width: #{@product_presenter.width}px; height: #{@product_presenter.height}px;"}
     - @product_presenter.tiles.each_with_index do |tile, i|
-      .tile{:id => "tile_#{i}", :class => "#{tile.nil? ? "empty" : tile.html_class}"}
-      = link_to_function('H', "Element.toggle('product_#{tile.id}')") if tile
-      = render :partial => tile
-
-    %img#grid_img{:src => "images/main.jpg"}
+      .tile{:id => "tile_#{i}", :class => "#{tile.nil? ? "empty" : ""}", :style => "width: #{@product_presenter.tile_width}px; height: #{@product_presenter.tile_height}px;"}
+        = render :partial => tile
     %br{:clear => "all"}
