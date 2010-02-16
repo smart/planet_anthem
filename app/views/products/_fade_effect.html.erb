@@ -3,21 +3,23 @@
     var raw_elements = $.makeArray($("#grid > .sold_out > .product")), elements =[], interval,
       rate = 5, speed = .1, grouping = 50, simultaneous = 1 / speed;
       
-    while (0 < raw_elements.length) {
-      elements.push(raw_elements.splice(Math.floor(Math.random() * raw_elements.length), 1));
+    if (0 < raw_elements.length) {
+      while (0 < raw_elements.length) {
+        elements.push(raw_elements.splice(Math.floor(Math.random() * raw_elements.length), 1));
+      }
+      
+      interval = setInterval(function() {
+        if (0 === elements.length) {
+          clearInterval(interval);
+        }
+        var numToAnimate = (simultaneous + 1) - (parseFloat($(elements[0]).css("opacity")) * simultaneous);
+        if (simultaneous + 1 === numToAnimate) {
+          elements.splice(0, grouping);
+        }
+        for (var i = 0; i < numToAnimate * grouping && i < elements.length; i += 1) {
+          $(elements[i]).css({ opacity: parseFloat($(elements[i]).css("opacity")) - speed });
+        }
+      }, rate);
     }
-    
-    interval = setInterval(function() {
-      if (0 === elements.length) {
-        clearInterval(interval);
-      }
-      var numToAnimate = (simultaneous + 1) - (parseFloat($(elements[0]).css("opacity")) * simultaneous);
-      if (simultaneous + 1 === numToAnimate) {
-        elements.splice(0, grouping);
-      }
-      for (var i = 0; i < numToAnimate * grouping && i < elements.length; i += 1) {
-        $(elements[i]).css({ opacity: parseFloat($(elements[i]).css("opacity")) - speed });
-      }
-    }, rate);
   });
 </script>
