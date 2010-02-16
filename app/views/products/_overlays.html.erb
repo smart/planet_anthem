@@ -21,7 +21,7 @@
         }
       }
     });
-    $("div.product").mouseenter(function() {
+    $("a.product").mouseenter(function() {
       $("#grid").qtip("api").updateContent('<div class=\"calendar_hover\"><div class=\"title_bar\"><h2 class=\"on\" lang=\"en\">Pre order</h2></div>' + $(this).find("h2").html() + '</div>');
     });
   });

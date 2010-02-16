@@ -26,3 +26,4 @@ config.action_view.cache_template_loading            = true
 
 # Enable threaded mode
 # config.threadsafe!
+config.action_controller.asset_host = "s3.planet-anthem.bandwith.us"
