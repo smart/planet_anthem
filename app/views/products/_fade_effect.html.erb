@@ -20,7 +20,7 @@
         for (var i = 0; i < numToAnimate * grouping && i < elements.length; i += grouping) {
           var changeGroup = $("empty");
           for (var j = 0; j < grouping; j += 1) {
-            changeGroup.add(elements[i + j]);
+            changeGroup = changeGroup.add(elements[i + j]);
           }
           changeGroup.css({ opacity: parseFloat(changeGroup.css("opacity")) - speed });
         }
