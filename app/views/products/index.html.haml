@@ -2,7 +2,7 @@
   %h1 PLANET ANTHEM
   %img#background_img{:src => "images/background.png"}
   #grid
-    - @product_presenter.tiles.each_slice do |row|
+    - @product_presenter.tiles.each_slice(@product_presenter.smallest_square) do |row|
       .row
         row.each do |tile|
           .tile{:class => "#{ 'sold_out' if tile.sold_out? }"}

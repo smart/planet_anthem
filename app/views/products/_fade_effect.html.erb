@@ -1,7 +1,7 @@
 <script type="text/javascript">
   $(function() {
-    $("#grid > .sold_out > .product").css({ opacity: 1 }); // for testing
-    var raw_elements = $.makeArray($("#grid > .sold_out > .product")), elements =[], interval,
+    $("#grid .sold_out > .product").css({ opacity: 1 }); // for testing
+    var raw_elements = $.makeArray($("#grid .sold_out > .product")), elements =[], interval,
       rate = 5, speed = .1, grouping = 50, simultaneous = 1 / speed;
       
     if (0 < raw_elements.length) {
