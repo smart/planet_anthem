@@ -16,7 +16,7 @@ class Product < ActiveRecord::Base
     products_hash = fetch_json
     Rails.logger.debug("found #{products_hash.size} json products")
     products_hash.each do |prod|
-      prod.delete("id")
+      prod["store_id"] = prod.delete("id")
       product = Product.find_or_create_by_number(prod)
       Rails.logger.debug("Product #{product.number} is a new product") if product.new_record?
       status = product.update_attributes(prod)
