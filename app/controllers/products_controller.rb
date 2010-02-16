@@ -1,6 +1,7 @@
 require 'app/presenters/product_presenter'
 class ProductsController < ApplicationController
-  #caches_action :feed, :cache_path => Proc.new { |controller|
+  before_filter :etag_check, :only => :index
+  caches_action :index, :cache_path => Proc.new { |controller| "/mosaic/" + controller.sold_out_count.to_s}
 
   def index
     @product_presenter = ProductPresenter.new
@@ -11,11 +12,26 @@ class ProductsController < ApplicationController
     render "products/index"
   end
 
+  def sync
+    Product.sync
+    @product_presenter = ProductPresenter.new
+    render "products/index"
+    cache_page(nil, :controller => "products", :action => "index")
+    fresh_when(:etag => @article, :last_modified => @article.created_at.utc, :public => true)
+  end
+
   # GET /products/1
   # GET /products/1.xml
   def show
     @product = Product.find(params[:id])
   end
 
+  def sold_out_count
+    @soc ||= Product.count(:conditions => "qoh = 0")
+  end
+
+  def etag_check
+    fresh_when(:etag => sold_out_count, :public => true)
+  end
 
 end
