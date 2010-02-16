@@ -1,4 +1,4 @@
-.product{:style => "", :id => product.id, :class => ""}
+.product{:style => "", :id => product.id, :class => "${ 'sold_out' if product.sold_out? }"}
   %a{:href => "https://store.discobiscuits.com/pre_order.php?id=#{product.number}"}
     =# link_to_function('H', "Element.toggle('product_#{product.id}')") if product
     = image_tag "products/#{product.image_name}", :style => "width:100%; height:100%;"
