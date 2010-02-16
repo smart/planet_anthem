@@ -1,5 +1,3 @@
-= render "product_overlay", :product => product
-
 .product{:style => "", :id => product.id, :class => ""}
   %a{:href => "https://store.discobiscuits.com/pre_order.php?id=#{product.number}"}
     =# link_to_function('H', "Element.toggle('product_#{product.id}')") if product

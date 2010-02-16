@@ -6,11 +6,11 @@
     = stylesheet_link_tag 'reset'
     = stylesheet_link_tag 'main'
     = javascript_include_tag "jquery"
-    = javascript_include_tag "jquery_ui"
-    = javascript_include_tag "jquery_plugins_widgets"
   %body
     .container
       .flash
         %p{:style => "color: green"}= flash[:notice]
         %p{:style => "color: red"}= flash[:error]
       .content#content= yield
+    = javascript_include_tag "jquery_ui"
+    = javascript_include_tag "jquery_plugins_widgets"
