@@ -1,29 +1,28 @@
 <script type="text/javascript">
-  <% tip_content = "<div class=\"calendar_hover\"><div class=\"title_bar\"><h2 class=\"on\" lang=\"en\">Pre order</h2></div>#{product.description}</div>"
-  -%>
   $(function() {
-    $("div.product").each(function() {
-      $(this).qtip({
-        content: '<div class=\"calendar_hover\"><div class=\"title_bar\"><h2 class=\"on\" lang=\"en\">Pre order</h2></div>' + $(this).find("h2").html() + '</div>',
-        style: {
-          padding: 0,
-          width: 302,
-          border: {
-            width: 0
-            //color: '#575757',
-            //radius: 1
-          }
-        },
-        position: {
-          target: 'mouse',
-          adjust: {
-            mouse: true,
-            screen: true,
-            x: 30,
-            y: 0
-          }
+    $("#grid).qtip({
+      content: '<div class=\"calendar_hover\"><div class=\"title_bar\"><h2 class=\"on\" lang=\"en\">Pre order</h2></div></div>',
+      style: {
+        padding: 0,
+        width: 302,
+        border: {
+          width: 0
+          //color: '#575757',
+          //radius: 1
         }
-      });
+      },
+      position: {
+        target: 'mouse',
+        adjust: {
+          mouse: true,
+          screen: true,
+          x: 30,
+          y: 0
+        }
+      }
+    });
+    $("div.product").mouseenter(function() {
+      $("#grid").qtip("api").updateContent('<div class=\"calendar_hover\"><div class=\"title_bar\"><h2 class=\"on\" lang=\"en\">Pre order</h2></div>' + $(this).find("h2").html() + '</div>'
     });
   });
 </script>
