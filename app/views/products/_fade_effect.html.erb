@@ -13,7 +13,7 @@
       }
       var numToAnimate = (simultaneous + 1) - (parseFloat($(elements[0]).css("opacity")) * simultaneous);
       if (simultaneous + 1 === numToAnimate) {
-        elements.shift();
+        elements.splice(0, grouping);
       }
       for (var i = 0; i < numToAnimate * grouping && i < elements.length; i += 1) {
         $(elements[i]).css({ opacity: parseFloat($(elements[i]).css("opacity")) - speed });
