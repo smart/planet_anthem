@@ -5,30 +5,33 @@ body {
   clear: both;
   cursor: pointer;
   background-image: url(/images/main.jpg); }
+  #grid #grid_image {
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.4;
+    position: absolute;
+    width: 100%;
+    z-index: -1; }
+  #grid .tile {
+    overflow: hidden;
+    position: relative;
+    float: left;
+    background-color: black; }
+    #grid .tile .product {
+      width: 100%;
+      background-color: #ccc;
+      border: 0px solid #000;
+      padding: 0px;
+      margin: 0px;
+      height: 18px;
+      width: 18px; }
 
-#grid_image {
-  height: 100%;
-  left: 0;
-  top: 0;
-  opacity: 0.4;
-  position: absolute;
+.product_overlay {
+  display: none; }
+
+.product_image {
   width: 100%;
-  z-index: -1; }
-
-.tile {
-  overflow: hidden;
-  position: relative;
-  float: left;
-  background-color: black; }
-
-.product {
-  width: 100%;
-  margin: 5px;
-  background-color: #ccc;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border: 1px solid #000;
-  padding: 2px;
   height: 100%; }
 
 #background_img {
@@ -39,23 +42,3 @@ body {
   position: absolute;
   width: 100%;
   z-index: -1; }
-
-.dcd {
-  background-image: url(/images/products/signed_cd.jpg); }
-
-.tshirt {
-  background-image: url(/images/products/vip.jpg); }
-
-
-
-
-
-
-.bisco {
-  background-image: url(/images/products/golf_cart.jpg); }
-
-.year {
-  background-image: url(/images/products/all_access.jpg); }
-
-.gitwillig {
-  background-image: url(/images/products/all_access.jpg); }
