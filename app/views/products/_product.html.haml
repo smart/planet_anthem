@@ -1,3 +1,3 @@
-%a.product{:id => product.id, :href => "https://store.discobiscuits.com/pre_order.php?id=#{product.number}"}
+%a.product{:id => product.id, :class => product.image_class, :href => "https://store.discobiscuits.com/pre_order.php?id=#{product.number}"}
   =# link_to_function('H', "Element.toggle('product_#{product.id}')") if product
-  = image_tag "products/#{product.image_name}", :size => "18x18"
+  =# image_tag "products/#{product.image_name}", :size => "18x18"

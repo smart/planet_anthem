@@ -20,10 +20,10 @@ class ProductsController < ApplicationController
     fresh_when(:etag => @article, :last_modified => @article.created_at.utc, :public => true)
   end
 
-  # GET /products/1
-  # GET /products/1.xml
   def show
     @product = Product.find(params[:id])
+    response.headers['Cache-Control'] = 'public, max-age=60'
+    render :template => "products/show", :layout => false
   end
 
   def sold_out_count

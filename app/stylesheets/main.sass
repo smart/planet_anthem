@@ -2,12 +2,11 @@
 body
   :background-color #000000
 
-#grid 
-  :clear both
-  :cursor pointer
-  :background-image url(/images/main.jpg) 
-  
-  #grid_image
+  h1
+    :font-size 48px
+    :padding 10px
+
+  #background_img
     :height 100%
     :left 0
     :top 0
@@ -16,35 +15,93 @@ body
     :width 100%
     :z-index -1
 
-  div.tile 
-    :overflow hidden 
-    //:position relative 
-    :float left
-    :background-color black
-  
-    a.product
-      :width 100%
-      :background-color #ccc
-      :border 0px solid #000
-      :padding 0px
-      :margin 0px
-      :height 18px
-      :width 18px
-      :display block
 
-.product_overlay
-  :display none
+#grid 
+  :clear both
+  :cursor pointer
+  :background-image url(/images/main.jpg) 
   
-.product_image
-  :width 100%
-  :height 100%
-    
-#background_img
-  :height 100%
-  :left 0
-  :top 0
-  :opacity 0.4
-  :position absolute
-  :width 100%
-  :z-index -1
+  .row
+    :width 900px
+    :height 18px
   
+  a.product
+    :overflow hidden 
+    :float left
+    :width 100%
+    :background-color #ccc
+    :border 0px solid #000
+    :padding 0px
+    :margin 0px
+    :height 18px
+    :width 18px
+    :display block
+  
+  a.sold_out
+    :background transparent
+    :background-color transparent
+  
+  .signed_cd_tennis  
+    :background-image url(/images/products/signed_CD-tennis_tile.jpg)
+  .signed_cd_guitar_lesson  
+    :background-image url(/images/products/signed_CD-guitar_lesson_tile.jpg)
+  .signed_cd_side_stage_access  
+    :background-image url(/images/products/signed_CD-side_stage_access_tile.jpg)
+  .signed_cd_setlist  
+    :background-image url(/images/products/signed_CD-setlist_tile.jpg)
+  .signed_cd_sing_with_friends  
+    :background-image url(/images/products/signed_CD-sing_with_friends_tile.jpg)
+  .signed_cd_bass_lesson  
+    :background-image url(/images/products/signed_CD-bass_lesson_tile.jpg)
+  .signed_cd_after_show_access  
+    :background-image url(/images/products/signed_CD-after_show_access_tile.jpg)
+  .signed_cd_eagles_game  
+    :background-image url(/images/products/signed_CD-eagles_game_tile.jpg)
+  .signed_cd_play_during_soundcheck  
+    :background-image url(/images/products/signed_CD-play_during_soundcheck_tile.jpg)
+  .signed_cd_song_request  
+    :background-image url(/images/products/signed_CD-song_request_tile.jpg)
+  .signed_cd_prank_call  
+    :background-image url(/images/products/signed_CD-prank_call_tile.jpg)
+  .tla_cd_release_show_three_sixteen  
+    :background-image url(/images/products/TLA-CD_release_show-3.16_tile.jpg)
+  .signed_cd_open_for_db  
+    :background-image url(/images/products/signed_CD-open_for_db_tile.jpg)
+  .signed_cd_voicemail  
+    :background-image url(/images/products/signed_CD-voicemail_tile.jpg)
+  .tla_cd_release_show_three_fifteen  
+    :background-image url(/images/products/TLA-CD_release_show-3.15_tile.jpg)
+  .signed_cd_biscuits_remix_your_song  
+    :background-image url(/images/products/signed_CD-biscuits_remix_your_song_tile.jpg)
+  .signed_cd_sing_on_record  
+    :background-image url(/images/products/signed_CD-sing_on_record_tile.jpg)
+  .signed_cd_golfcart_ride  
+    :background-image url(/images/products/signed_CD-golfcart_ride_tile.jpg)
+  .signed_cd_play_during_actual_show  
+    :background-image url(/images/products/signed_CD-play_during_actual_show_tile.jpg)
+  .signed_cd_encephalous_crime  
+    :background-image url(/images/products/signed_CD-encephalous_crime_tile.jpg)
+  .signed_cd_hand_guitar  
+    :background-image url(/images/products/signed_CD-hand_guitar_tile.jpg)
+  .signed_cd_limited_edition_tshirt  
+    :background-image url(/images/products/signed_CD-limited_edition_tshirt_tile.jpg)
+  .signed_cd_live_download  
+    :background-image url(/images/products/signed_CD-live_download_tile.jpg)
+  .signed_cd_shots  
+    :background-image url(/images/products/signed_CD-shots_tile.jpg)
+  .signed_cd_drum_lesson  
+    :background-image url(/images/products/signed_CD-drum_lesson_tile.jpg)
+  .signed_cd_house_show  
+    :background-image url(/images/products/signed_CD-house_show_tile.jpg)
+  .signed_cd_keyboard_lesson  
+    :background-image url(/images/products/signed_CD-keyboard_lesson_tile.jpg)
+  .signed_cd_dinner  
+    :background-image url(/images/products/signed_CD-dinner_tile.jpg)
+  .signed_cd  
+    :background-image url(/images/products/signed_CD_tile.jpg)
+  .signed_cd_your_face_on_website  
+    :background-image url(/images/products/signed_CD-your_face_on_website_tile.jpg)
+  .signed_cd_ticket_access_one_year  
+    :background-image url(/images/products/signed_CD-ticket_access_one_year_tile.jpg)
+  .signed_cd_poster  
+    :background-image url(/images/products/signed_CD-poster_tile.jpg)

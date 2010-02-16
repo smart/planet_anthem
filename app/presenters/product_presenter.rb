@@ -9,6 +9,10 @@ class ProductPresenter
   end
 
 
+  def smallest_square
+    Math.sqrt(products.size).ceil
+  end
+
   def tiles
     products + ([nil] * num_empty_tiles)
   end
@@ -33,8 +37,13 @@ class ProductPresenter
     height / smallest_square
   end
 
-  def smallest_square
-    Math.sqrt(products.size).ceil
+  def recent_sell_out_ids
+    @rsoi ||= Product.recent_sell_out_ids
+  end
+
+  def product_class(product)
+    return "recent_sell_out" if recent_sell_out_ids.include?(product.id)
+    return "sold_out" if product.sold_out?
   end
 end
 

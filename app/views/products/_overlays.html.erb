@@ -1,7 +1,7 @@
 <script type="text/javascript">
   $(function() {
     $("#grid").qtip({
-      content: '<div class=\"calendar_hover\"><div class=\"title_bar\"><h2 class=\"on\" lang=\"en\">Pre order</h2></div></div>',
+      content: '<div class=\"calendar_hover\" id=\"qtip_body\"><div class=\"title_bar\"><h2 class=\"on\" lang=\"en\">Pre order</h2></div></div>',
       style: {
         padding: 0,
         width: 302,
@@ -22,7 +22,7 @@
       }
     });
     $("a.product").mouseenter(function() {
-      $("#grid").qtip("api").updateContent('<div class=\"calendar_hover\"><div class=\"title_bar\"><h2 class=\"on\" lang=\"en\">Pre order</h2></div>' + $(this).find("h2").html() + '</div>');
+      $("#qtip_body").load("/products/" + $(this).attr("id"));
     });
   });
 </script>
