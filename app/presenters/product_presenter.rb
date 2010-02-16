@@ -33,9 +33,6 @@ class ProductPresenter
     height / smallest_square
   end
 
-
-  private
-
   def smallest_square
     Math.sqrt(products.size).ceil
   end
