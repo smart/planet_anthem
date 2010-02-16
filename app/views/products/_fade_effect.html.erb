@@ -1,5 +1,6 @@
 <script type="text/javascript">
   $(function() {
+    $("#grid > .sold_out > .product").css({ opacity: 1 }); // for testing
     var raw_elements = $.makeArray($("#grid > .sold_out > .product")), elements =[], interval,
       rate = 5, speed = .1, grouping = 50, simultaneous = 1 / speed;
       
@@ -16,8 +17,12 @@
         if (simultaneous + 1 === numToAnimate) {
           elements.splice(0, grouping);
         }
-        for (var i = 0; i < numToAnimate * grouping && i < elements.length; i += 1) {
-          $(elements[i]).css({ opacity: parseFloat($(elements[i]).css("opacity")) - speed });
+        for (var i = 0; i < numToAnimate * grouping && i < elements.length; i += grouping) {
+          var changeGroup = $("empty");
+          for (var j = 0; j < grouping; j += 1) {
+            changeGroup.add(elements[i + j]);
+          }
+          changeGroup.css({ opacity: parseFloat(changeGroup.css("opacity")) - speed });
         }
       }, rate);
     }
