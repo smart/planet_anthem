@@ -7,11 +7,14 @@ gem "haml", "2.2.17"
 gem "money"
 gem 'hoptoad_notifier'
 gem 'json'
+gem "pg"
 
 group :development do
   gem "mongrel"
   gem "sqlite3-ruby", :require => "sqlite3"
 end
+
+
 
 group :test do
   gem "rspec"
