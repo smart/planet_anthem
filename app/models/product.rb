@@ -107,7 +107,7 @@ class Product < ActiveRecord::Base
         "signed_CD-setlist"
       when "Signed CD and song request any show"
         "signed_CD-song_request"
-      when "Signed CD and Hand Barber Gubson Guitar on Stage"
+      when "Signed CD and hand Jon the Becker on Stage"
         "signed_CD-hand_guitar"
       when "Signed CD and Shots of Jameson with Magner (Magner buys the shots)"
         "signed_CD-shots"
