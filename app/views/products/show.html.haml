@@ -1,5 +1,7 @@
-%h2 Pre Order Now
+%h2 Pre-order goes live Monday at 12:00pm EST
 
-=image_tag @product.image_path
-%h3== Price: #{@product.price}
-%p= @product.description
+.qtip_body_left
+  =image_tag @product.image_path
+  %h3== Price: #{@product.price}
+.qtip_body_right
+  %p= @product.description
