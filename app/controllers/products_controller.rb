@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     @product_presenter = ProductPresenter.new
     render "products/index"
     cache_page(nil, :controller => "products", :action => "index")
-    fresh_when(:etag => @article, :last_modified => @article.created_at.utc, :public => true)
+    #fresh_when(:etag => @article, :last_modified => @article.created_at.utc, :public => true)
   end
 
   def show
@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
   end
 
   def etag_check
-    fresh_when(:etag => sold_out_count, :public => true)
+    fresh_when(:etag => "1-#{sold_out_count}", :public => true)
   end
 
 end
