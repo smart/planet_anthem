@@ -42,4 +42,5 @@ ActionController::Routing::Routes.draw do |map|
   map.mosaic "/mosaic", :controller => "products", :action => "index"
   map.test "/test", :controller => "products", :action => "test"
   map.product "/products/:id", :controller => "products", :action => "show"
+  map.sync "/sync", :controller => "products", :action => "sync"
 end
