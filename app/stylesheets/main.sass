@@ -1,6 +1,7 @@
 
 body
   :background-color #000000
+  :font-family "Helvetica Neue",Helvetica,Arial,sans-serif
 
   h1
     :font-size 48px
@@ -107,13 +108,25 @@ body
     :background-image url(/images/products/signed_CD-poster_tile.jpg)
 
 #qtip_body
-  :-moz-border-radius 5px
-  :-webkit-border-radius 5px
-  :border 3px solid white
+  :width  100%
+  :padding 3px
   h2
-    :width 302
+    :width 100%
+    :font-weight bold
     :text-align center
+    .sold_out_header
+      :color #E12626
   .qtip_body_left
     :float left
+    :width 150px
+    :padding 4px
   .qtip_body_right
     :float left
+    :width 215px
+    :padding 4px
+    .price
+      :font-weight bold
+      :text-align center
+      :padding 10px
+  .sold_out
+    :text-decoration line-through

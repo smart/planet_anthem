@@ -1,7 +1,21 @@
-%h2 Pre-order goes live Monday at 12:00pm EST
+%h2
+  - if @product.sold_out?
+    %span.sold_out_header Sold
+  - else
+    Pre-order goes live Monday at 12:00pm EST
 
-.qtip_body_left
-  =image_tag @product.image_path
-  %h3== Price: #{@product.price}
-.qtip_body_right
-  %p= @product.description
+.diver{:style => "width:100%;"}
+  .qtip_body_left
+    =image_tag @product.image_path
+  .qtip_body_right
+    %p= @product.description
+    .price
+      Price: $
+      - if @product.sold_out?
+        %span.sold_out= @product.price
+      - else
+        = @product.price
+  %br{:clear => "all"}
+
+%center{:style => "border-top: 1px grey solid;"} 
+  %p Questions? Email: preorder@discobiscuits.com
