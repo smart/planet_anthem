@@ -155,7 +155,25 @@ class Product < ActiveRecord::Base
         "TLA-CD_release_show-3.15"
       when "New CD and Ticket to CD Release Party Show at TLA in Philly on Tuesday 3/16"
         "TLA-CD_release_show-3.16"
-      else
+      when "Signed CD and Hot Air Balloon Ride With Band"
+        "signed_CD-primary_colors"
+      when "Signed CD and Marc manages your Facebook page for 24 hours"
+        "signed_CD-facebook"
+      when "Signed CD and Johnny R. Goode runs lights at your office"
+        "signed_CD-lights"
+      when "Signed CD and Magner sits on the toilet in your dorm room while you interview him for your school paper"
+        "signed_CD-toilet"
+      when "Signed CD and Copy of Planet Anthem and a free copy of the Disco Biscuits next studio album due out in 2017"
+        "signed_CD"
+      when "Signed CD and Barber will hide under your bed & whisper the lyrics to Konkrete"
+        "signed_CD-under_the_bed"
+      when "Signed CD and Biscuits will play the Pacific Northwest"
+        "signed_CD-pac_nor_west"
+      when "Signed CD and Smoke medicinal marijuana with Marc Brownstein"
+        "signed_CD-medical_marijuana"
+      when "Signed CD and Guided tour by Barber of the air ducts at the Electric Factory"
+        "signed_CD-air_duct"
+        else
         ""
     end
   end
