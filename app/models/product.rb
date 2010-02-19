@@ -173,6 +173,10 @@ class Product < ActiveRecord::Base
         "signed_CD-medical_marijuana"
       when "Signed CD and Guided tour by Barber of the air ducts at the Electric Factory"
         "signed_CD-air_duct"
+      when "Signed CD and Trip with Barber post-show to a local Dunkin Donuts and a Wawa to make his \"Cake from Ultra Heaven\""
+        "signed_CD-dunkin_donuts"
+      when "Signed CD and Barber will explain to your kid's 2nd grade teacher that Green actually is a primary color"
+          "signed_CD-primary_colors"
         else
         ""
     end
