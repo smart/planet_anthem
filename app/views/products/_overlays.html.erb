@@ -2,17 +2,22 @@
   $(function() {
     $("#grid").qtip({
       content: '<div class=\"calendar_hover\" id=\"qtip_body\"><div class=\"title_bar\"><h2 class=\"on\" lang=\"en\">Pre order</h2></div></div>',
+      type: "relative",
       style: {
         padding: 0,
-        width: 302,
+        width: 410,
         border: {
-          width: 0
-          //color: '#575757',
-          //radius: 1
+          width: 4,
+          color: '#575757',
+          radius: 8
         }
       },
+      effect: {
+        type: "fade",
+        length: 100
+      },
       position: {
-        target: 'mouse',
+        target: "mouse",
         adjust: {
           mouse: true,
           screen: true,
