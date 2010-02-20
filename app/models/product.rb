@@ -156,7 +156,7 @@ class Product < ActiveRecord::Base
       when "New CD and Ticket to CD Release Party Show at TLA in Philly on Tuesday 3/16"
         "TLA-CD_release_show-3.16"
       when "Signed CD and Hot Air Balloon Ride With Band"
-        "signed_CD-primary_colors"
+        "signed_CD-hab"
       when "Signed CD and Marc manages your Facebook page for 24 hours"
         "signed_CD-facebook"
       when "Signed CD and Johnny R. Goode runs lights at your office"
