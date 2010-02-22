@@ -1,11 +1,12 @@
 require 'app/presenters/product_presenter'
 class ProductsController < ApplicationController
   layout "application", :except => :show
-  BREAKER = "2"
+  BREAKER = "3"
 
   def index
-    fresh_when(:etag => "#{BREAKER}-#{sold_out_count}", :public => true)
+    response.headers['Cache-Control'] = 'public, max-age=10'
     @product_presenter = ProductPresenter.new
+    fresh_when(:etag => "#{BREAKER}-#{@product_presenter.sold_out_count}", :public => true)
   end
 
   def test
@@ -20,14 +21,5 @@ class ProductsController < ApplicationController
     cache_page(nil, :controller => "products", :action => "index")
   end
 
-  def show
-    @product = Product.find(params[:id])
-    fresh_when(:etag => @product, :last_modified => @product.updated_at.utc, :public => true)
-    #render :template => "products/show", :layout => false
-  end
-
-  def sold_out_count
-    @soc ||= Product.count(:conditions => "qoh = 0")
-  end
 
 end

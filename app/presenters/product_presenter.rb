@@ -18,7 +18,11 @@ class ProductPresenter
   end
 
   def products
-    @products ||= Product.all
+    @products ||= ProductJson.all
+  end
+
+  def sold_out_count
+    @sold_out_count ||= products.count{|prod| prod.sold_out?}
   end
 
   def num_tiles
