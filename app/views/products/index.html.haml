@@ -5,8 +5,9 @@
     - @product_presenter.tiles.each_slice(@product_presenter.smallest_square) do |row|
       .row
         -row.each do |tile|
-          %a.product{:id => tile.store_id, :class => [tile.image_class, @product_presenter.product_class(tile)].join(" "), "data-description" => h(tile.description), "data-image" => tile.image_name, "data-price" => tile.price.to_s, "data-qoh" => tile.qoh}
-          =# "https://store.discobiscuits.com/pre_order.php?id=#{tile.store_id}"
+          - prod_hash = {:id => tile.store_id, :class => [tile.image_class, @product_presenter.product_class(tile)].join(" "), "data-description" => h(tile.description), "data-image" => tile.image_name, "data-price" => tile.price.to_s, "data-qoh" => tile.qoh}
+          - prod_hash[:href] = "https://store.discobiscuits.com/pre_order.php?id=#{tile.store_id}" if live? && !tile.sold_out?
+          %a.product{prod_hash}
     %br{:clear => "all"}
   = render :partial => "fade_effect"
   = render :partial => "overlays"

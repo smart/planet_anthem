@@ -10,6 +10,8 @@ class ProductsController < ApplicationController
   end
 
   def test
+    @live = true
+    response.headers['Cache-Control'] = 'public, max-age=10'
     @product_presenter = TestProductPresenter.new(:percent_sold_out => params[:percent_sold_out].to_i)
     render "products/index"
   end
@@ -20,6 +22,13 @@ class ProductsController < ApplicationController
     render "products/index"
     cache_page(nil, :controller => "products", :action => "index")
   end
+
+  private
+
+  def live?
+    @live || false
+  end
+  helper_method :live?
 
 
 end

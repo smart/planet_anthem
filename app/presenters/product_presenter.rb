@@ -41,12 +41,12 @@ class ProductPresenter
     height / smallest_square
   end
 
-  def recent_sell_out_ids
-    @rsoi ||= Product.recent_sell_out_ids
+  def recent_sell_outs
+    @rso ||= products.select {|de| de.sold_out?}.shuffle[0..300]
   end
 
   def product_class(product)
-    return "recent_sell_out" if recent_sell_out_ids.include?(product.id)
+    return "recent_sell_out" if recent_sell_outs.include?(product)
     return "sold_out" if product.sold_out?
   end
 end
