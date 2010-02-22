@@ -22,7 +22,7 @@ class ProductPresenter
   end
 
   def sold_out_count
-    @sold_out_count ||= products.count{|prod| prod.sold_out?}
+    products.inject(0){|count, prod| count += 1 if prod.sold_out?; count}
   end
 
   def num_tiles
