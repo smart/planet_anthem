@@ -27,7 +27,7 @@
       }
     });
     $("a.product").mouseenter(function() {
-      $("#qtip_body").load("/products/" + $(this).attr("id"));
+      $("#grid").qtip("api").updateContent("<div id=\"qtip_body\"><h2>" + (($(this).attr("data-qoh") == "1") ? "Pre-order goes live Monday at 12:00pm EST" : "<span class=\"sold_out_header\">Sold</span>") + "</h2><div style=\"width: 100%;\" class=\"diver\"><div class=\"qtip_body_left\"><img src=\"/images/products/" + $(this).attr("data-image") +".jpg?\" alt=\"Tla-cd_release_show-3\"></div><div class=\"qtip_body_right\"><p>" + $(this).attr("data-description") + "</p><div class=\"price\">Price: $" + $(this).attr("data-price") + "</div></div><br clear=\"all\"></div><center style=\"border-top: 1px solid grey;\"><p>Questions? Email: preorder@discobiscuits.com</p></center></div>");
     });
   });
 </script>
